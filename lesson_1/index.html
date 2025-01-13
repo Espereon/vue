@@ -8,7 +8,25 @@
 </head>
 
 <body>
-
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <button v-on:click="changeText">click button</button>
+        <h1>Счётчик</h1>
+        <button v-on:click="increase(5, $event)">increase</button>
+        <!-- можно увеличивать по типу v-on:click="counter++" -->
+        <p>{{counter}}</p>
+        <h2 v-on:mousemove="mouseMove($event)">
+            Mouse move {{ x }} - {{ y }}
+            <span v-on:mousemove.stop>stopText</span>
+        </h2>
+        <p v-html="bigText"></p>
+        <h3 v-if="productAddCart">Добавить товар в корзину?</h3>
+        <h3 v-else="!productAddCart">Товар добавлен в корзину</h3>
+        <h3 v-show="productAddCart">Show</h3>
+        <button @click="productAddCart = !productAddCart">Add Product</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
