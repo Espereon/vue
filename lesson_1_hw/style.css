@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.center {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+.header {
+    margin-top: 53px;
+    margin-bottom: 57px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left_side {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo {
+    width: 34px;
+    height: 34px;
+}
+
+.menu_bar {
+    width: 258px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    gap: 30px;
+}
+
+.main {
+    position: relative;
+    padding-bottom: 93px;
+}
+
+.main_content {
+    position: absolute;
+    top: 208px;
+    left: 52px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_h1 {
+    width: 595px;
+    color: rgb(41, 47, 54);
+    font-family: DM Serif Display;
+    font-size: 65px;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 0%;
+    text-align: left;
+    padding-bottom: 18px;
+}
+
+.main_h2 {
+    width: 433px;
+    color: rgb(77, 80, 83);
+    font-family: Jost;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1%;
+    text-align: left;
+    padding-bottom: 21px;
+}
+
+.main_button {
+    width: 182px;
+    height: 75px;
+    padding: 26px 49px;
+    border-radius: 18px;
+    box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
+    background: rgb(41, 47, 54);
+    color: rgb(255, 255, 255);
+    font-family: Jost;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 125%;
+    letter-spacing: 2%;
+    text-align: center;
+}
+
+.project_heading {
+    padding-bottom: 93px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project_h1 {
+    color: rgb(41, 47, 54);
+    font-family: DM Serif Display;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 2%;
+    text-align: center;
+}
+
+.project_h3 {
+    color: rgb(77, 80, 83);
+    font-family: Jost;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1%;
+    text-align: center;
+    width: 737px;
+}
+
+.project_data {
+    display: flex;
+    justify-content: center;
+    gap: 67px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
