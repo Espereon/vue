@@ -129,4 +129,34 @@ a {
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-bottom: 96px;
+}
+
+.context {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.project_h2 {
+    color: rgb(41, 47, 54);
+    font-family: DM Serif Display;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 2%;
+    text-align: left;
+}
+
+.project_p {
+    color: rgb(77, 80, 83);
+    font-family: Jost;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1%;
+    text-align: left;
 }
