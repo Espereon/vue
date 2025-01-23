@@ -160,3 +160,32 @@ a {
     letter-spacing: 1%;
     text-align: left;
 }
+
+.counter {
+    background-color: #F4F0EC;
+    height: 457px;
+}
+
+.counter_context {
+    display: flex;
+}
+
+.counter_number {
+    color: rgb(205, 162, 116);
+    font-family: DM Serif Display;
+    font-size: 85px;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 2%;
+    text-align: left;
+}
+
+.counter_text {
+    color: rgb(77, 80, 83);
+    font-family: Jost;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1%;
+    text-align: left;
+}
