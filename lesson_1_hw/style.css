@@ -202,6 +202,7 @@ a {
 
 .blog {
     padding-top: 96px;
+    padding-bottom: 33px;
 }
 
 .heading_blog {
@@ -232,4 +233,55 @@ a {
     line-height: 150%;
     letter-spacing: 1%;
     text-align: center;
+}
+
+.subcontent {
+    display: flex;
+    gap: 27px;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.tag {
+    display: flex;
+    box-sizing: border-box;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 62px;
+    box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+    padding: 21px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subtext {
+    padding-top: 21px;
+}
+
+.subtext_h2 {
+    color: rgb(41, 47, 54);
+    font-family: DM Serif Display;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: 2%;
+    text-align: left;
+    padding-bottom: 30px;
+}
+
+.date_button_sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub_p {
+    color: rgb(77, 80, 83);
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 1%;
+    text-align: left;
+    text-transform: capitalize;
 }
