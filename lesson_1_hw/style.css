@@ -285,3 +285,15 @@ a {
     text-align: left;
     text-transform: capitalize;
 }
+
+.button {
+    margin: 80px;
+}
+
+.add_button {
+    margin: 40px;
+}
+
+.vue {
+    margin: 80px;
+}

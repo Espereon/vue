@@ -133,7 +133,8 @@
                         <p>22 Декабрь,2022</p>
                         <img src="./img/sub_vector.png" alt="sub_vector">
                     </div>
-                </div></div>
+                </div>
+            </div>
             <div class="tag"><img src="./img/subcontent_3.png" alt="subcontent_3">
                 <div class="subtext">
                     <h2 class="subtext_h2">Лучшие интерьерные решения для офисов</h2>
@@ -141,10 +142,24 @@
                         <p class="sub_p">25 Декабрь,2022</p>
                         <img src="./img/sub_vector.png" alt="sub_vector">
                     </div>
-                </div></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer"></div>
+    <div class="center vue" id="app">
+        <h1>Задания по vue</h1>
+        <button class="button" v-on:click="reverse()">{{ button }}</button>
+        <button class="add_button" v-on:click="add_element()">Добавить новый элемент</button>
+        <ul>
+            <li v-for="item in items" v-on:click="remove_element" :key="item.id">
+                {{ item.text }}
+            </li>
+        </ul>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
