@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scipt.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Отображение информации о товаре, есть объект product, который содержит информацию о товаре, включая название, цену и URL изображение товара -->
+    <div id="app">
+        <div class="product">{{ product.name }} : {{ product.price }}</div>
+        <button @click="discount">Получить скидку</button>
+        <p>Стоимость со скидкой {{ priceWithDiscount }}</p>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+        const app = createApp({
+            data() {
+                return {
+                    product: {
+                        name: 'Книга',
+                        price: 800,
+                        link: 'http://placekitten.com/200/300', // Примерная ссылка на картинку
+                    },
+                    discount: 0, // Начальная скидка равна нулю
+                };
+            },
+            methods: {
+                discount() {
+                    this.discount = Math.floor(Math.random() * 20);
+                    console.log(this.discount);
+                },
+            },
+            computed: {
+                priceWithDiscount() {
+                    return this.product.price - (this.product.price * this.discount / 100);
+                },
+            },
+        });
+        app.mount('#app');
+    </script>
+</body>
+
+</html>
