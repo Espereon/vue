@@ -15,6 +15,27 @@
         <div class="product">{{ product.name }} : {{ product.price }}</div>
         <button @click="discount">Получить скидку</button>
         <p>Стоимость со скидкой {{ priceWithDiscount }}</p>
+
+        <div class="product_list">
+            <div class="products" v-for="item in products" :key="item.id">
+                <input type="number" v-model.nubmer="item.quantity">
+                <input type="checkbox" v-model="item.bougth">
+                <span>{{ item.name }}</span>
+                <p>{{ item.bougth }}</p>
+                <p>{{ item.quantity }}</p>
+            </div>
+        </div>
+        <div class="form">
+            <input type="text" v-model="contact.name">
+            <input type="text" v-model="contact.secName">
+            <input type="text" v-model="contact.eMail">
+            <button @click="addContact">Отправить</button>
+        </div>
+        <div class="contact_list">
+            <div class="contacts" v-for="item in contacts" :key="item.id">
+                {{ item.id }} {{ item.name }} {{ item.secondName }} {{ item.eMail }}
+            </div>
+        </div>
     </div>
 
     <script>
@@ -24,21 +45,78 @@
                 return {
                     product: {
                         name: 'Книга',
+                        discount: 0,
                         price: 800,
                         link: 'http://placekitten.com/200/300', // Примерная ссылка на картинку
                     },
-                    discount: 0, // Начальная скидка равна нулю
+                    products: [
+                        {
+                            name: 'milk',
+                            quantity: 10,
+                            bougth: false,
+                        },
+                        {
+                            name: 'bread',
+                            quantity: 5,
+                            bougth: false,
+                        },
+                        {
+                            name: 'solt',
+                            quantity: 8,
+                            bougth: false,
+                        }],
+                    contacts: [
+                        {
+                            id: 1,
+                            name: 'Victor',
+                            secondName: 'Ivanov',
+                            eMail: 'ivanovV@mail.ru',
+                        },
+                        {
+                            id: 2,
+                            name: 'Ivan',
+                            secondName: 'Olegov',
+                            eMail: 'iolegov@mail.ru',
+                        },
+                        {
+                            id: 3,
+                            name: 'Oleg',
+                            secondName: 'Victorov',
+                            eMail: 'victorovO@mail.ru',
+                        }
+                    ],
+                    contact: {
+                        name: '',
+                        secName: '',
+                        eMail: ''
+                    }
                 };
             },
             methods: {
                 discount() {
-                    this.discount = Math.floor(Math.random() * 20);
-                    console.log(this.discount);
+                    this.product.discount = Math.floor(Math.random() * 20);
                 },
+                addContact() {
+                    if (this.contact.name && this.contact.secName && this.contact.eMail) {
+                        // this.contacts.push({
+                        //     id: this.contacts.length + 1,
+                        //     ...this.contact,
+                        // });
+
+                        // this.contacts.push(this.contact);
+
+                        this.contacts.push(JSON.parse(JSON.stringify(this.contact)));
+
+                        this.contact.name = '';
+                        this.contact.secName = '';
+                        this.contact.eMail = '';
+                    }
+                }
             },
             computed: {
                 priceWithDiscount() {
-                    return this.product.price - (this.product.price * this.discount / 100);
+                    if (!this.product.discount) return this.product.price;
+                    return this.product.price - (this.product.price * this.product.discount) / 100;
                 },
             },
         });
