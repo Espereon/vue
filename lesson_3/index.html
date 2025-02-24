@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="comp.js"></script>
 </head>
+
 <body>
+    <div id="app">
+        <new-component title="Hello new title"></new-component>
+        <new-component title="Hello counter">
+
+        </new-component>
+        <button @click="currentTab = nameButton" v-for="nameButton in nameButtons" :key="nameButton.id"> {{ nameButton }}</button>
+        <component :is="changeTabs"></component>
+        <!-- <standart-comp></standart-comp>
+        <new-component :title="article" v-for="article in articles" :key="articles.id"></new-component> -->
+    </div>
     <script>
-        
+        // vue 3
+        // const { createApp } = Vue;
+        // const app = createApp({
+        //     data() {
+        //         return {
+        //             message: 'text message'
+        //         }
+        //     },
+        //     methods: {
+        //         newInfo() {
+        //             console.log('Hello methods');
+        //         },
+        //     },
+        //     computed: {
+        //         newComputed() {
+        //             return this.message;
+        //         },
+        //     },
+        // });
+        // app.mount('#app');
+
+        // vue 2
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'text message',
+                articles: ['info articles', 'info acticles 2', 'info articles3'],
+                nameButtons: ['one', 'two', 'tree'],
+                currentTab: 'one'
+            },
+            methods: {
+                newInfo() {
+                    console.log('hello methods');
+                },
+            },
+            computed: {
+                newComp() {
+                    return this.message;
+                },
+                changeTabs() {
+                    return `change-${this.currentTab}`;
+                }
+
+            },
+        });
     </script>
 </body>
+
 </html>
