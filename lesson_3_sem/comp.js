@@ -1,4 +1,4 @@
-// 1. Создание простого счетчика: Создайте компонент счетчика, который имеет кнопку "+" и 
+// 1. Создание простого счетчика: Создайте компонент счетчика, который имеет кнопку "+" и
 // кнопку "-", и отображает текущее значение счетчика.При нажатии на кнопки счетчик
 // должен увеличиваться или уменьшаться соответственно.
 
@@ -112,58 +112,59 @@
 // товарах могут быть представлены в виде массива объектов.
 // 3. Добавьте две кнопки сортировки (по убыванию, по возрастанию)
 // 4. При нажатии на кнопки, обновите список отображаемых товаров,
-// отфильтрованных по цене. 
+// отфильтрованных по цене.
 
-Vue.component('product', {
-    data() {
-        return {
-            products: [
-                {
-                    id: 1,
-                    productName: 'Apple',
-                    price: 15
-                },
-                {
-                    id: 2,
-                    productName: 'Pineappple',
-                    price: 35
-                },
-                {
-                    id: 3,
-                    productName: 'Banan',
-                    price: 10
-                }
-            ],
-            sortDirection: '',
-        }
-    },
-    computed: {
-        sortedList() {
-            const sortedArrProducts = [...this.products];
-            switch (this.sortDirection) {
-                case "up":
-                    return sortedArrProducts.sort((a, b) => a.price - b.price);
-                case "down":
-                    return sortedArrProducts.sort((a, b) => b.price - a.price);
-                default:
-                    return this.products;
-            }
-        },
-    },
-    template: `
-    <div>
-            <ul>
-            <li v-for="item in sortedList" :key="item.id">{{item.productName}} - {{item.price}}</li>
-            </ul>
-        <button @click="sortDirection='up'">up</button>
-        <button @click="sortDirection='down'">down</button>
-        <button @click="sortDirection=''">Сброс фильтра</button>
-    </div>
-  `
+// Vue.component('product', {
+//     data() {
+//         return {
+//             products: [
+//                 {
+//                     id: 1,
+//                     productName: 'Apple',
+//                     price: 15
+//                 },
+//                 {
+//                     id: 2,
+//                     productName: 'Pineappple',
+//                     price: 35
+//                 },
+//                 {
+//                     id: 3,
+//                     productName: 'Banan',
+//                     price: 10
+//                 }
+//             ],
+//             sortDirection: '',
+//         }
+//     },
+//     computed: {
+//         sortedList() {
+//             const sortedArrProducts = [...this.products];
+//             switch (this.sortDirection) {
+//                 case "up":
+//                     return sortedArrProducts.sort((a, b) => a.price - b.price);
+//                 case "down":
+//                     return sortedArrProducts.sort((a, b) => b.price - a.price);
+//                 default:
+//                     return this.products;
+//             }
+//         },
+//     },
+//     template: `
+//     <div>
+//             <ul>
+//             <li v-for="item in sortedList" :key="item.id">{{item.productName}} - {{item.price}}</li>
+//             </ul>
+//         <button @click="sortDirection='up'">up</button>
+//         <button @click="sortDirection='down'">down</button>
+//         <button @click="sortDirection=''">Сброс фильтра</button>
+//     </div>
+//   `
 
-});
+// });
 
-new Vue({
-    el: "#app",
-    data: {},
-});
+// new Vue({
+//     el: "#app",
+//     data: {},
+// });
+
