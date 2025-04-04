@@ -1,14 +1,18 @@
 <script setup>
 
 import AuthenticationComp from './components/AuthenticationComp.vue';
+import BookComp from './components/BookComp.vue';
 import CartComp from './components/CartComp.vue';
+import MortgageCalculator from './components/MortgageCalculator.vue';
 
 </script>
 
 <template>
   <div>
-    <AuthenticationComp />
-    <CartComp />
+    <!-- <AuthenticationComp /> -->
+    <!-- <CartComp /> -->
+    <!-- <BookComp /> -->
+    <MortgageCalculator />
   </div>
 </template>
 
