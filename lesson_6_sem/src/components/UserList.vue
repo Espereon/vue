@@ -1,6 +1,6 @@
 <template>
     <div>
-        <MyUser v-for="user in users" :key="user.email" :user-data="user" />
+        <MyUser v-for="user in users" :key="user.email" :user-data="user" @upDateUser="upDateUser" />
     </div>
 </template>
 
@@ -17,7 +17,18 @@ export default {
             ]
         }
     },
-    components: { MyUser }
+    components: { MyUser },
+    methods: {
+        upDateUser(userData) {
+            const user = this.users.find((user) => user === userData.user);
+            if (user) {
+                user.firstName = userData.firstName;
+                user.lastName = userData.lastName;
+            } else {
+                alert('user not found')
+            }
+        }
+    },
 }
 </script>
 
