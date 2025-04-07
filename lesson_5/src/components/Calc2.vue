@@ -13,10 +13,15 @@
                 {{ error }}
             </div>
         </div>
+        <div></div>
         <div>
             <template v-if="result < 0">Получилось отрицательное число</template>
             <template v-if="result >= 0 && result <= 100">Получилось число от 0 до 100</template>
             <template v-if="result > 100">Получилось число больше 100</template>
+        </div>
+        <div>
+            Число фибаначи для 1-го поля ввода {{ fib1 }} <br>
+            Число фибаначи для 2-го поля ввода {{ fib2 }} <br>
         </div>
         <div>
             <h3>История операций</h3>
@@ -59,6 +64,9 @@ export default {
                 this.result = operande1 / operande2;
             }
         },
+        fib(n) {
+            return n <= 1 ? n : this.fib(n - 1) + this.fib(n - 2)
+        },
         calcAllResult(operation = '+') {
             this.error = '';
             switch (operation) {
@@ -81,6 +89,14 @@ export default {
             const value = `${this.operande1}${operation}${this.operande2}=${this.result}`;
             this.logs.push(value); // Добавляем значение в массив
         },
+    },
+    computed: {
+        fib1() {
+            return this.fib(this.operande1);
+        },
+        fib2() {
+            return this.fib(this.operande2);
+        }
     },
 };
 </script>

@@ -1,13 +1,13 @@
 <script setup>
-import Calc2 from './components/Calc2.vue';
-// import CalcFunction from './components/CalcFunction.vue';
-// import HelloWorld from './components/HelloWorld.vue'
+
+import CalcFunction from './components/CalcFunction.vue';
+
 </script>
 
 <template>
   <div>
-    <!-- <CalcFunction /> -->
-    <Calc2 />
+  <CalcFunctio</CalcFunction>
+
   </div>
 </template>
 
