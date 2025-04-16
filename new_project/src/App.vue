@@ -45,7 +45,7 @@ const fetchFavorites = async () => {
 };
 
 const addToFavorite = async (item) => {
-  item.isFavorite = true;
+  item.isFavorite = !item.isFavorite;
   console.log(item);
 };
 

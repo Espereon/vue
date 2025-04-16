@@ -8,16 +8,8 @@ const props = defineProps({
   isFavorite: Boolean,
   isAdded: Boolean,
   onClickFavorite: Function,
+  onClickAdd: Function,
 });
-const addToFavorite = inject("addToFavorite");
-
-const onClickFavorite = () => {
-  const obj = {
-    ...props,
-    parentId: props.id,
-  };
-  addToFavorite(obj);
-};
 </script>
 
 <template>
@@ -26,7 +18,7 @@ const onClickFavorite = () => {
       class="relative bg-white border border-slate-100 rounded-3xl p-8 cursor-pointer transition hover:-translate-y-2 hover:shadow-xl"
     >
       <img
-        @onclick="onClickFavorite"
+        @click="onClickFavorite"
         :src="!isFavorite ? '/like-1.svg' : '/like-2.svg'"
         alt="Like"
         class="absolute top-8 left-8"
@@ -39,7 +31,7 @@ const onClickFavorite = () => {
           <b>{{ price }} руб.</b>
         </div>
         <img
-          @onclick="onClickAdd"
+          @click="onClickAdd"
           :src="!isAdded ? '/plus.svg' : '/checked.svg'"
           alt="Plus"
         />
