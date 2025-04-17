@@ -1,5 +1,4 @@
 <script setup>
-import { inject } from "vue";
 const props = defineProps({
   id: Number,
   imageUrl: String,
